@@ -1,0 +1,18 @@
+<div class="container serie-container p-4 d-flex flex-column justify-content-center">
+    <div class="container-fluid d-flex flex-column p-4 gap-4">
+        <app-form-numerical-serie
+            title="Calculador Serie SNGULAR"
+            (sendValue)="randomNumber = $event">
+        </app-form-numerical-serie>
+        
+        <app-logic-numerical-serie
+            [randomNumber]="randomNumber"
+            (resultNumericalSerie)="result = $event">
+        </app-logic-numerical-serie>
+
+        <app-results-numerical-serie
+            [result]="result">
+        </app-results-numerical-serie>
+
+    </div>
+</div>
