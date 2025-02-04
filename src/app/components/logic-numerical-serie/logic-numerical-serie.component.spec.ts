@@ -64,10 +64,11 @@ describe('LogicNumericalSerieComponent', () => {
   });
 
   it('should correctly solve the numerical series', () => {
-    const triangular = (4 * component['getTriangularNumber'](4));
-    const primo = (2 * component['getPrimo'](4));
-    const fibonacci = component['getFibonacci'](7);
-    expect(component['solveNumericalSerie'](5)).toBe(39);
+    const n = 5;
+    const triangular = (4 * component['getTriangularNumber'](n - 1));
+    const primo = (2 * component['getPrimo'](n - 1));
+    const fibonacci = component['getFibonacci'](n + 2);
+    expect(component['solveNumericalSerie'](n)).toBe(triangular - primo + fibonacci);// con 5 es 39
   });
 
 });
