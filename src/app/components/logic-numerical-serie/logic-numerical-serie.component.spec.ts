@@ -64,11 +64,91 @@ describe('LogicNumericalSerieComponent', () => {
   });
 
   it('should correctly solve the numerical series', () => {
+    const n = 11;
+    const triangular = (4 * component['getTriangularNumber'](n - 1));
+    const primo = (2 * component['getPrimo'](n - 1));
+    const fibonacci = component['getFibonacci'](n + 2);
+    expect(component['solveNumericalSerie'](n)).toBe(triangular - primo + fibonacci);// con 11 es 395
+  });
+
+  it('should correctly solve the numerical series with n equal 1 and result 2', () => {
+    const n = 1;
+    const triangular = (4 * component['getTriangularNumber'](n - 1));
+    const primo = (2 * component['getPrimo'](n - 1));
+    const fibonacci = component['getFibonacci'](n + 2);
+    expect(component['solveNumericalSerie'](n)).toBe(triangular - primo + fibonacci);// con 1 es 2
+  });
+
+  it('should correctly solve the numerical series with n equal 2 and result 3', () => {
+    const n = 2;
+    const triangular = (4 * component['getTriangularNumber'](n - 1));
+    const primo = (2 * component['getPrimo'](n - 1));
+    const fibonacci = component['getFibonacci'](n + 2);
+    expect(component['solveNumericalSerie'](n)).toBe(triangular - primo + fibonacci);// con 2 es 3
+  });
+
+  it('should correctly solve the numerical series with n equal 3 and result 11', () => {
+    const n = 3;
+    const triangular = (4 * component['getTriangularNumber'](n - 1));
+    const primo = (2 * component['getPrimo'](n - 1));
+    const fibonacci = component['getFibonacci'](n + 2);
+    expect(component['solveNumericalSerie'](n)).toBe(triangular - primo + fibonacci);// con 3 es 11
+  });
+
+  it('should correctly solve the numerical series with n equal 4 and result 22', () => {
+    const n = 4;
+    const triangular = (4 * component['getTriangularNumber'](n - 1));
+    const primo = (2 * component['getPrimo'](n - 1));
+    const fibonacci = component['getFibonacci'](n + 2);
+    expect(component['solveNumericalSerie'](n)).toBe(triangular - primo + fibonacci);// con 4 es 22
+  });
+
+  it('should correctly solve the numerical series with n equal 5 and result 39', () => {
     const n = 5;
     const triangular = (4 * component['getTriangularNumber'](n - 1));
     const primo = (2 * component['getPrimo'](n - 1));
     const fibonacci = component['getFibonacci'](n + 2);
     expect(component['solveNumericalSerie'](n)).toBe(triangular - primo + fibonacci);// con 5 es 39
+  });
+
+  it('should correctly solve the numerical series with n equal 6 and result 59', () => {
+    const n = 6;
+    const triangular = (4 * component['getTriangularNumber'](n - 1));
+    const primo = (2 * component['getPrimo'](n - 1));
+    const fibonacci = component['getFibonacci'](n + 2);
+    expect(component['solveNumericalSerie'](n)).toBe(triangular - primo + fibonacci);// con 6 es 59
+  });
+
+  it('should correctly solve the numerical series with n equal 7 and result 92', () => {
+    const n = 7;
+    const triangular = (4 * component['getTriangularNumber'](n - 1));
+    const primo = (2 * component['getPrimo'](n - 1));
+    const fibonacci = component['getFibonacci'](n + 2);
+    expect(component['solveNumericalSerie'](n)).toBe(triangular - primo + fibonacci);// con 7 es 92
+  });
+
+  it('should correctly solve the numerical series with n equal 8 and result 133', () => {
+    const n = 8;
+    const triangular = (4 * component['getTriangularNumber'](n - 1));
+    const primo = (2 * component['getPrimo'](n - 1));
+    const fibonacci = component['getFibonacci'](n + 2);
+    expect(component['solveNumericalSerie'](n)).toBe(triangular - primo + fibonacci);// con 8 es 133
+  });
+
+  it('should correctly solve the numerical series with n equal 9 and result 195', () => {
+    const n = 9;
+    const triangular = (4 * component['getTriangularNumber'](n - 1));
+    const primo = (2 * component['getPrimo'](n - 1));
+    const fibonacci = component['getFibonacci'](n + 2);
+    expect(component['solveNumericalSerie'](n)).toBe(triangular - primo + fibonacci);// con 9 es 195
+  });
+
+  it('should correctly solve the numerical series with n equal 10 and result 278', () => {
+    const n = 10;
+    const triangular = (4 * component['getTriangularNumber'](n - 1));
+    const primo = (2 * component['getPrimo'](n - 1));
+    const fibonacci = component['getFibonacci'](n + 2);
+    expect(component['solveNumericalSerie'](n)).toBe(triangular - primo + fibonacci);// con 10 es 278
   });
 
 });
