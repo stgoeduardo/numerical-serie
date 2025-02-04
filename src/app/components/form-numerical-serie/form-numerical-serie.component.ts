@@ -11,6 +11,7 @@ export class FormNumericalSerieComponent implements OnInit {
     @Input() title: string;
     serieForm!: FormGroup;
     @Output() sendValue: EventEmitter<number> = new EventEmitter<number>();
+    @Output() isFormValid: EventEmitter<boolean> = new EventEmitter<boolean>();
 
     constructor(private fb: FormBuilder) {
         this.title = 'SNGULAR';
@@ -26,9 +27,10 @@ export class FormNumericalSerieComponent implements OnInit {
     }
 
     send(): void {
-        this.sendValue.emit(
-            this.serieForm.valid ? this.serieForm.get('randomNumber')?.value : -1
-        );
+        const value = this.serieForm.valid ?
+            this.serieForm.get('randomNumber')?.value :
+            ((this.serieForm?.get('randomNumber')?.value ? undefined : -1))
+        this.sendValue.emit(value);
     }
 
 }

@@ -2,17 +2,30 @@
     <div class="container-fluid d-flex flex-column p-4 gap-4">
         <app-form-numerical-serie
             title="Calculador Serie SNGULAR"
-            (sendValue)="randomNumber = $event">
+            (sendValue)="getResultValue($event)">
         </app-form-numerical-serie>
-        
-        <app-logic-numerical-serie
-            [randomNumber]="randomNumber"
-            (resultNumericalSerie)="result = $event">
-        </app-logic-numerical-serie>
+        @if (isSendFirstValue) {
+            @if (randomNumber) {
+                @if (randomNumber > 0) {
+                    <app-logic-numerical-serie
+                        [randomNumber]="randomNumber"
+                        (resultNumericalSerie)="result = $event">
+                    </app-logic-numerical-serie>
 
-        <app-results-numerical-serie
-            [result]="result">
-        </app-results-numerical-serie>
+                    <app-results-numerical-serie
+                        [result]="result">
+                    </app-results-numerical-serie>
+                }
+            } @else {
+                <div class="alert alert-danger" role="alert">
+                    Ingrese un valor númerico válido (Números naturales [0-9])
+                </div>
+            }
+        }
+        
+        
+
+        
 
     </div>
 </div>

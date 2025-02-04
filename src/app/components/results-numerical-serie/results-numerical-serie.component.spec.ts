@@ -21,4 +21,8 @@ describe('ResultsNumericalSerieComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should initialize result with zero', () => {
+    expect(component.result).toBe(0);
+  });
+
 });

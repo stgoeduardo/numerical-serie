@@ -30,17 +30,23 @@ describe('AppComponent', () => {
   });
 
   it('should have randomNumber defined', () => {
-    expect(component.randomNumber).toBeUndefined();
+    expect(component.randomNumber).toBe(0);
   });
 
   it('should have result defined', () => {
-    expect(component.result).toBeUndefined();
+    expect(component.result).toBe(0);
+  });
+
+  it('should have isSendFirstValue defined', () => {
+    expect(component.isSendFirstValue).toBe(false);
   });
 
   it('should be able to set values to properties', () => {
     component.randomNumber = 10;
     component.result = 20;
+    component.isSendFirstValue = false;
     expect(component.randomNumber).toBe(10);
     expect(component.result).toBe(20);
+    expect(component.isSendFirstValue).toBe(false);
   });
 });

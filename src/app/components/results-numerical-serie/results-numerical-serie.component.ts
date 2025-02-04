@@ -6,5 +6,9 @@ import { Component, Input } from "@angular/core";
     standalone: false
 })
 export class ResultsNumericalSerieComponent {
-    @Input() result!: number;
+    @Input() result: number;
+
+    constructor() {
+        this.result = 0;
+    }
 }
